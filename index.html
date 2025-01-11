@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    />
+  </head>
+  <body class="m-auto ms-5 mt-5">
+    <p class="fs-4" id="message">Click the button to hide this message.</p>
+    <button id="hide-message" class="btn btn-primary">Hide Message</button>
+    <button id="show-message" class="btn btn-primary" style="display: none;">Show Message</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        // Hide the "Show Message" button initially
+        $("#show-message").hide();
+
+        // When "Hide Message" is clicked
+        $("#hide-message").click(function () {
+          $("#message").hide();          
+          $("#hide-message").hide();     
+          $("#show-message").show();     
+        });
+
+        // When "Show Message" is clicked
+        $("#show-message").click(function () {
+          $("#message").show();       
+          $("#hide-message").show();     
+          $("#show-message").hide();   
+        });
+      });
+    </script>
+  </body>
+</html>

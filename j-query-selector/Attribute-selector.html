@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Attribute Selectors</title>
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+      .secure-link {
+        color: green;
+        font-weight: bold;
+      }
+      .placeholder-highlight {
+        border: 2px solid blue;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h2>Attribute Selectors Example</h2>
+
+    <form>
+      <input type="text" name="email" placeholder="Enter your email" />
+      <input type="text" placeholder="Enter your name" />
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter your password"
+      />
+    </form>
+
+    <a href="https://example.com">Secure Link</a>
+    <a href="http://example.com">Non-Secure Link</a>
+
+    <script>
+      $(document).ready(function () {
+        // 1. Select input elements with name="email" and highlight them
+        $('input[name="email"]').addClass("highlight");
+
+        // 2. Select all links starting with "https" and style them
+        $('a[href^="https"]').addClass("secure-link");
+
+        // 3. Select input elements with a "placeholder" attribute and apply a style
+        $("input[placeholder]").addClass("placeholder-highlight");
+      });
+    </script>
+  </body>
+</html>

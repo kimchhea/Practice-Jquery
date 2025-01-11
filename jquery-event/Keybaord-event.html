@@ -1,0 +1,50 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>jQuery Keyboard Events</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #f7f7f7;  
+            margin: 0;  
+            padding: 20px;  
+        }  
+        h1 {  
+            color: #4A4A4A;  
+        }  
+        #keyboard-input {  
+            width: 300px;  
+            padding: 10px;  
+            border: 1px solid #ccc;  
+            border-radius: 5px;  
+        }  
+        .output {  
+            margin-top: 20px;  
+            font-weight: bold;  
+        }  
+    </style>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script>  
+    $(document).ready(function () {  
+        $('#keyboard-input').on('keydown', function (e) {  
+            console.log(`Key down: ${e.key}`);  
+            $('.output').text(`Key down: ${e.key}`);  
+        });  
+
+        $('#keyboard-input').on('keyup', function (e) {  
+            console.log(`Key up: ${e.key}`);  
+            $('.output').text(`Key up: ${e.key}`);  
+        });  
+    });  
+    </script>  
+</head>  
+<body>  
+
+    <h1>Keyboard Events</h1>  
+    <input type="text" id="keyboard-input" placeholder="Type something here">  
+    <div class="output"></div>  
+
+</body>  
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>DOM Traversing Example</title>  
+    <style>  
+        .highlight {  
+            background-color: rgba(0, 255, 98, 0.581); 
+        }  
+        .parent-highlight {  
+            border: 2px solid green; 
+        }  
+        .sibling-highlight {  
+            color: rgb(160, 141, 141);
+        }  
+    </style>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script>  
+    $(document).ready(function () {  
+        // 1. Find all <p> elements within '.container' and highlight them  
+        $('.container').find('p').addClass('highlight');  
+        
+        // 2. Get the parent of the element with ID 'item' and apply a border  
+        $('#item').parent().addClass('parent-highlight');  
+        
+        // 3. Get all child elements of '.list' and highlight them  
+        $('.list').children().addClass('highlight');  
+        
+        // 4. Get all siblings of the element with ID 'item' and style them  
+        $('#item').siblings().addClass('sibling-highlight');  
+    });  
+    </script>  
+</head>  
+<body>  
+
+    <div class="container">  
+        <p>Paragraph 1</p>  
+        <p>Paragraph 2</p>  
+        <p>Paragraph 3</p>  
+    </div>  
+
+    <div id="item">This is the item.</div>  
+    
+    <div class="list">  
+        <div>Child 1</div>  
+        <div>Child 2</div>  
+        <div>Child 3</div>  
+    </div>  
+
+    <div>This is a sibling of the item.</div>  
+    <div>This is another sibling of the item.</div>  
+
+</body>  
+</html>

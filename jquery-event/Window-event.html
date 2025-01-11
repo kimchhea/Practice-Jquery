@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Window and Document Events</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 20px;
+      }
+      h1 {
+        color: #4a4a4a;
+      }
+      #scroll-info {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #009688;
+        border-radius: 5px;
+        background-color: #e0f2f1;
+      }
+      .resize-info {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #2196f3;
+        border-radius: 5px;
+        background-color: #e3f2fd;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Load event
+        $(window).on("load", function () {
+          alert("Page has completely loaded.");
+        });
+
+        // Resize event
+        $(window).on("resize", function () {
+          $(".resize-info").text(
+            `Window resized to: ${$(window).width()}px wide and ${$(
+              window
+            ).height()}px tall`
+          );
+        });
+
+        // Scroll event
+        $(window).on("scroll", function () {
+          $("#scroll-info").text(
+            `Scrolled to: ${$(window).scrollTop()}px from the top`
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Window/Document Events</h1>
+
+    <div id="scroll-info">Scroll to see the position!</div>
+    <div class="resize-info">Resize the window to see its dimensions!</div>
+
+    <div style="height: 1500px; margin-top: 20px; border: 1px solid #ccc">
+      Scroll down this area to trigger the scroll event.
+    </div>
+  </body>
+</html>

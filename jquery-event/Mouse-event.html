@@ -1,0 +1,63 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>jQuery Mouse Events</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            background-color: #f7f7f7;  
+            margin: 0;  
+            padding: 20px;  
+        }  
+        h1 {  
+            color: #4A4A4A;  
+        }  
+        #mouse-box {  
+            width: 300px;  
+            height: 100px;  
+            background-color: #009688;  
+            color: white;  
+            text-align: center;  
+            line-height: 100px; /* Center text vertically */  
+            border-radius: 8px;  
+            transition: background-color 0.3s;  
+            cursor: pointer; /* Pointer on hover */  
+        }  
+        .highlight {  
+            background-color: #00796B; /* Darker shade on hover */  
+        }  
+    </style>  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+    <script>  
+    $(document).ready(function () {  
+        $('#mouse-box').on('click', function () {  
+            alert('Box clicked!');  
+        });  
+
+        $('#mouse-box').on('dblclick', function () {  
+            alert('Box double-clicked!');  
+        });  
+
+        $('#mouse-box').on('mouseenter', function () {  
+            $(this).addClass('highlight');  
+        });  
+
+        $('#mouse-box').on('mouseleave', function () {  
+            $(this).removeClass('highlight');  
+        });  
+
+        $('#mouse-box').on('mousemove', function (e) {  
+            console.log(`Mouse Position - X: ${e.pageX}, Y: ${e.pageY}`);  
+        });  
+    });  
+    </script>  
+</head>  
+<body>  
+
+    <h1>Mouse Events</h1>  
+    <div class="box" id="mouse-box">Hover or Click Me!</div>  
+
+</body>  
+</html>
